@@ -1,0 +1,18 @@
+server:
+  port: 5051
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Pravin2004P/configuration_properties
+          clone-on-start: true
+
+  output:
+    ansi:
+      enabled: ALWAYS
+
+management:
+ security:
+    enabled: false

@@ -1,0 +1,35 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-ClientApplication<client>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.pravin.client.ClientApplication",
+      "projectName": "client",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env",
+      "vmArgs": " -Dcom.sun.management.jmxremote"
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-EcommerceApplication<ecommerce>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.pravin.ecommerce.EcommerceApplication",
+      "projectName": "ecommerce",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-ConfigClientApplication<config-client>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.pravin.config_client.ConfigClientApplication",
+      "projectName": "config-client",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}

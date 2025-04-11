@@ -1,0 +1,37 @@
+server:
+  port: 3030
+
+spring:
+  application:
+    name: outer-gateway
+    
+  output:
+    ansi:
+      enabled: always
+
+  cloud:
+    gateway:
+      routes:
+        - id: forward-to-client-gateway
+          uri: http://localhost:4444
+          predicates:
+            - Path=/client
+
+        - id: forward-to-product-service
+          uri: http://localhost:8081
+          predicates:
+            - Path=/get
+          filters:
+            - RewritePath=/get, /api/get
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
